@@ -14,7 +14,7 @@ function ProductForm({ productId }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/categorias')
+    axios.get('https://proyectofinal-backend-7clb.onrender.com/categorias')
       .then((response) => {
         console.log('Categorías recibidas:', response.data);
         setCategorias(response.data);
@@ -26,7 +26,7 @@ function ProductForm({ productId }) {
 
   useEffect(() => {
     if (productId) {
-      axios.get(`http://localhost:3000/productos/${productId}`)
+      axios.get(`https://proyectofinal-backend-7clb.onrender.com/productos/${productId}`)
         .then((response) => {
           const { categoria, ...rest } = response.data;
           setFormData({
@@ -57,10 +57,10 @@ function ProductForm({ productId }) {
 
     try {
       if (productId) {
-        await axios.put(`http://localhost:3000/productos/${productId}`, datosParaEnviar);
+        await axios.put(`https://proyectofinal-backend-7clb.onrender.com/productos/${productId}`, datosParaEnviar);
         alert('Producto actualizado');
       } else {
-        await axios.post('http://localhost:3000/productos', datosParaEnviar);
+        await axios.post('https://proyectofinal-backend-7clb.onrender.com/productos', datosParaEnviar);
         alert('Producto creado');
       }
       // Limpiar el formulario

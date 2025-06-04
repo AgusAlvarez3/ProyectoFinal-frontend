@@ -8,7 +8,7 @@ function Products({ onEdit }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/productos')
+    axios.get('https://proyectofinal-backend-7clb.onrender.com/productos')
       .then((response) => {
         console.log('Datos recibidos:', response.data);
         setProducts(response.data);
@@ -24,7 +24,7 @@ function Products({ onEdit }) {
   const handleDelete = async (id) => {
     if (window.confirm('¿Seguro que quieres eliminar este producto?')) {
       try {
-        await axios.delete(`http://localhost:3000/productos/${id}`);
+        await axios.delete(`https://proyectofinal-backend-7clb.onrender.com/productos/${id}`);
         setProducts(products.filter((product) => product.id !== id));
         alert('Producto eliminado');
       } catch (error) {
