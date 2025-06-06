@@ -12,7 +12,7 @@ function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll); // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -32,7 +32,7 @@ function Navbar() {
           <path d="M3 6h18" />
           <path d="M12 6l-6 6h12l-6-6z" />
         </svg>
-        <span>TdR</span>
+        <span>S/C</span>
       </div>
       <ul>
         <li>
