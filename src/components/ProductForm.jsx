@@ -63,6 +63,10 @@ function ProductForm({ productId }) {
         await axios.post('https://proyectofinal-backend-7clb.onrender.com/productos', datosParaEnviar);
         alert('Producto creado');
       }
+
+      //Recargar la página automáticamente
+      window.location.reload();
+
       // Limpiar el formulario
       setFormData({
         nombre: '',
